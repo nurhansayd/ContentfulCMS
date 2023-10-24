@@ -14,6 +14,7 @@ export const useFetchProjects = () => {
   const getData = async () => {
     try {
       const response = await client.getEntries({ content_type: 'projects' });
+      console.log(response);
       const projects = response.items.map((item) => {
         const { title, url, image } = item.fields;
         const id = item.sys.id;
